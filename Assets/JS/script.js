@@ -28,8 +28,42 @@ $(function(){
     // attribute of each time-block be used to do this?
     //
     // TODO: Add code to display the current date in the header of the page.
-localStorage.setItem("hour10", event.target.value)    
-JSON.parse(localStorage.getItem("hour10"))
+
+const area9 = document.getElementById("area9");
+const area10 = document.getElementById("area10");
+const area11 = document.getElementById("area11");
+const area12 = document.getElementById("area12");
+const area13 = document.getElementById("area13");
+const area14 = document.getElementById("area14");
+const area15 = document.getElementById("area15");
+const area16 = document.getElementById("area16");
+const area17 = document.getElementById("area17");
+
+
+$(".saveBtn").on("click", function() {
+  var text = $(this).siblings(".description").val();
+  var timeSlot = $(this).parent().attr("id");
+
+  localStorage.setItem(timeSlot, text);
+
+  
+  $(this).siblings("textarea").text(localStorage.getItem(timeSlot));
+});
+
+
+$("#area9").text(localStorage.getItem("hour9"));
+$("#area10").text(localStorage.getItem("hour10"));
+$("#area11").text(localStorage.getItem("hour11"));
+$("#area12").text(localStorage.getItem("hour12"));
+$("#area13").text(localStorage.getItem("hour13"));
+$("#area14").text(localStorage.getItem("hour14"));
+$("#area15").text(localStorage.getItem("hour15"));
+$("#area16").text(localStorage.getItem("hour16"));
+$("#area17").text(localStorage.getItem("hour17"));
+
+    
+    
+
 
 function  updateTense () {
   var hour =  dayjs().hour()
@@ -47,103 +81,3 @@ function  updateTense () {
   });
 }
 updateTense();
-//  ["#hour", "9"]
-  // $(function(){
-  //   var hour9= $("#hour-9")
-  //   var hour10= $("#hour-10")
-  //   var hour11= $("#hour-11")
-  //   var hour12= $("#hour-12")
-  //   var hour1= $("#hour-1")
-  //   var hour2= $("#hour-2")
-  //   var hour3= $("#hour-3")
-  //   var hour4= $("#hour-4")
-  //   var hour5= $("#hour-5")
-
-  //   var hour= dayjs().hour()
-
-  //   if (hour === 9) {
-  //     hour9.removeClass("past future").addClass("present");
-  //     console.log(hour9)
-  //   } else if (hour < 9) {
-  //     hour9.removeClass("present future").addClass("past");
-  //     console.log(hour)
-  //   } else if(hour > 9){
-  //     hour9.removeClass("present past").addClass("future");
-  //     console.log(hour)
-  //   }
-
-  //   if (hour === 10) {
-  //     hour10.removeClass("past future").addClass("present");
-  //   } else if (hour < 10) {
-  //     hour10.removeClass("present future").addClass("past");
-  //   } else if(hour > 10){
-  //     hour10.removeClass("present past").addClass("future");
-  //   }
-
-  //   if (hour === 11) {
-  //     hour11.removeClass("past future").addClass("present");
-  //   } else if (hour < 11) {
-  //     hour11.removeClass("present future").addClass("past");
-  //   } else if(hour > 11){
-  //     hour11.removeClass("present past").addClass("future");
-  //   }
-
-  //   if (hour === 12) {
-  //     hour12.removeClass("past future").addClass("present");
-  //   } else if (hour < 12) {
-  //     hour12.removeClass("present future").addClass("past");
-  //   } else if(hour > 12){
-  //     hour12.removeClass("present past").addClass("future");
-  //   }
-
-  //   if (hour === 13) {
-  //     hour1.removeClass("past future").addClass("present");
-  //   } else if (hour < 13) {
-  //     hour1.removeClass("present future").addClass("past");
-  //   } else if(hour > 13){
-  //     hour1.removeClass("present past").addClass("future");
-  //   }
-
-  //   if (hour === 14) {
-  //     hour2.removeClass("past future").addClass("present");
-  //   } else if (hour < 14) {
-  //     hour2.removeClass("present future").addClass("past");
-  //   } else if(hour > 14){
-  //     hour2.removeClass("present past").addClass("future");
-  //   }
-
-  //   if (hour === 15) {
-  //     hour3.removeClass("past future").addClass("present");
-  //   } else if (hour < 15) {
-  //     hour3.removeClass("present future").addClass("past");
-  //   } else if(hour > 15){
-  //     hour3.removeClass("present past").addClass("future");
-  //   }
-
-  //   if (hour === 16) {
-  //     hour4.removeClass("past future").addClass("present");
-  //   } else if (hour < 16) {
-  //     hour4.removeClass("present future").addClass("past");
-  //   } else if(hour > 16){
-  //     hour4.removeClass("present past").addClass("future");
-  //   }
-
-  //   if (hour === 17) {
-  //     hour5.removeClass("past future").addClass("present");
-  //   } else if (hour < 17) {
-  //     hour5.removeClass("present future").addClass("past");
-  //   } else if(hour > 17){
-  //     hour5.removeClass("present past").addClass("future");
-  //   }
-   
-  // console.log(hour)
-    
-  
-  // });
-  
-  
-  
-  
-  
-  
- 
