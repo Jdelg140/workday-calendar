@@ -29,26 +29,6 @@ $(function(){
     //
     // TODO: Add code to display the current date in the header of the page.
 
-const area9 = document.getElementById("area9");
-const area10 = document.getElementById("area10");
-const area11 = document.getElementById("area11");
-const area12 = document.getElementById("area12");
-const area13 = document.getElementById("area13");
-const area14 = document.getElementById("area14");
-const area15 = document.getElementById("area15");
-const area16 = document.getElementById("area16");
-const area17 = document.getElementById("area17");
-
-
-$(".saveBtn").on("click", function() {
-  var text = $(this).siblings(".description").val();
-  var timeSlot = $(this).parent().attr("id");
-
-  localStorage.setItem(timeSlot, text);
-
-  
-  $(this).siblings("textarea").text(localStorage.getItem(timeSlot));
-});
 
 
 $("#area9").text(localStorage.getItem("hour9"));
@@ -60,6 +40,23 @@ $("#area14").text(localStorage.getItem("hour14"));
 $("#area15").text(localStorage.getItem("hour15"));
 $("#area16").text(localStorage.getItem("hour16"));
 $("#area17").text(localStorage.getItem("hour17"));
+
+
+$("textarea").each(function() {
+  var hourSlot = $(this).parent().attr("id");
+  $(this).val(localStorage.getItem(hourSlot));
+});
+
+$(".saveBtn").on("click", function() {
+  var text = $(this).siblings(".description").val();
+  var hourSlot = $(this).parent().attr("id");
+
+  localStorage.setItem(hourSlot, text);
+
+  $(this).siblings("textarea").text(localStorage.getItem(hourSlot));
+});
+
+
 
     
     
@@ -81,3 +78,4 @@ function  updateTense () {
   });
 }
 updateTense();
+
